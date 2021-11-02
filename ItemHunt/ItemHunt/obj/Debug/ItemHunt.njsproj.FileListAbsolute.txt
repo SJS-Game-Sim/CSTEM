@@ -1,0 +1,3 @@
+C:\Users\Cylic\Documents\InternshipGit\CSTEM\ItemHunt\ItemHunt\obj\Debug\ItemHunt.njsproj.AssemblyReference.cache
+C:\Users\Cylic\Documents\InternshipGit\CSTEM\ItemHunt\ItemHunt\obj\Debug\ItemHunt.njsproj.CoreCompileInputs.cache
+C:\Users\Cylic\Documents\InternshipGit\CSTEM\ItemHunt\ItemHunt\bin\Microsoft.NodejsTools.WebRole.dll
