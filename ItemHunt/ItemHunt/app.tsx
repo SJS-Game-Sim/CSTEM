@@ -5,8 +5,12 @@ var ReactDOM = require('react-dom');
 
 export class Hello extends React.Component {
     render() {
+
+        //testing some memes
+        const name = 'test name';
+        const element = <h1>Hello,{name}</h1>;
         return (
-            <h1>Welcome to React!!</h1>
+            element
         );
     }
 }

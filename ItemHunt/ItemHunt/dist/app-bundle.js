@@ -29845,7 +29845,11 @@ var Hello = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Hello.prototype.render = function () {
-        return (React.createElement("h1", null, "Welcome to React!!"));
+        var name = 'test name';
+        var element = React.createElement("h1", null,
+            "Hello,",
+            name);
+        return (element);
     };
     return Hello;
 }(React.Component));
