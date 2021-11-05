@@ -4,10 +4,29 @@
     {
       "name": "James Isaacks",
       "email": "james.isaacks@roguedevstudios.com",
-      "url": "https://roguedevstudios.com"
+      "url": "https://roguedevstudios.com",
+      "role": "Lead Developer"
+    },
+    {
+      "name": "Claris Martinez",
+      "role": "Developer"
+    },
+    {
+      "name": "Todd McCracken",
+      "role": "Developer"
+    },
+    {
+      "name": "Kevin Segarra",
+      "role": "Developer"
     }
   ],
   "description": "CSTEM Educational Games",
+  "funding": [
+    {
+      "type": "other",
+      "url": "https://www.cstem.org/donate/"
+    }
+  ],
   "homepage": "https://github.com/SJS-Game-Sim/CSTEM/",
   "license": "CC-BY-NC-ND-4.0",
   "main": "server.js",
