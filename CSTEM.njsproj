@@ -28,9 +28,21 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\itemHunt.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\scratchLike.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app\wiringGame.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="server.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
