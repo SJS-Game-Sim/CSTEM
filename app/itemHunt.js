@@ -7,10 +7,10 @@ var width;
 var height;
 var alt;
 var onclick;
-
+var idAddHere;
 
 // id tag that goes in the html file
-var addHere = document.getElementById("addHere");
+var addHere = document.getElementById(idAddHere);
 
 newImg.setAttribute("src", src);
 newImg.setAttribute("id", id);
