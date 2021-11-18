@@ -1,0 +1,86 @@
+/*CSS for buttons*/
+
+
+.homeButton {
+    color: #b30000;
+    padding:20px 60px;
+    outline: none;
+    background-color: #ff8080;
+    border: none;
+    border-radius:75px;
+    box-shadow: 0 9px #ff4d4d;
+    font-size:22px;
+}
+
+.homeButton:hover{
+    background-color: #fc9c9c;
+}
+
+.homeButton:active {
+    background-color: #ff8080;
+    box-shadow: 0 5px #ff4d4d;
+    transform: translateY(4px);
+}
+
+.scratchButton {
+    color: #043daf;;
+    padding:20px 60px;
+    outline: none;
+    background-color: #80aaff;
+    border: none;
+    border-radius:75px;
+    box-shadow: 0 9px #5189fb;
+    font-size:22px;
+}
+
+.scratchButton:hover{
+    background-color: #99bbff;
+}
+
+.scratchButton:active {
+    background-color: #80aaff;
+    box-shadow: 0 5px #5189fb;
+    transform: translateY(4px);
+}
+
+.wireButton {
+    color: #219150;
+    padding:20px 60px;
+    outline: none;
+    background-color: #82e3aa;
+    border: none;
+    border-radius:75px;
+    box-shadow: 0 9px #2ecc71;
+    font-size:22px;
+}
+
+.wireButton:hover{
+    background-color: #adebc9;
+}
+
+.wireButton:active {
+    background-color: #82e3aa;
+    box-shadow: 0 5px #2ecc71;
+    transform: translateY(4px);
+}
+
+.itemHuntButton {
+    color: #999900;
+    padding:20px 60px;
+    outline: none;
+    background-color: #f9f986;
+    border: none;
+    border-radius:75px;
+    box-shadow: 0 9px #cccc00;
+    font-size:22px;
+}
+
+.itemHuntButton:hover{
+    background-color: #ffffb3;
+}
+
+.itemHuntButton:active {
+    background-color: #f9f986;
+    box-shadow: 0 5px #cccc00;
+    transform: translateY(4px);
+}
