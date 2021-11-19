@@ -1,0 +1,11 @@
+/*CSS for drop box*/
+.dropBox {
+    background-color:  #fdfdce;
+    border-style: dashed;
+    text-align: center;
+    color: #171703;
+    height: 100px;
+    width: 25%;
+    font-family: "Copperplate", fantasy;
+    font-size: 30px;
+  }
