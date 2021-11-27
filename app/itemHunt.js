@@ -59,141 +59,80 @@ newImg.onmousedown = function(event) {
 };
 
 var body = "" +
-"<div id=\"container\">" +
-"      <div class=\"list\">" +
-"        <h1 id=\"name1\ class=\"cName\>TODO</h1>" +
-"        <div class=\"draggingContainer\">" +
-"          <div class=\"card\" draggable=\"true\">" +
-"            <div class=\"title\ id=\"iTitle1\">Complete Header Design</div>" +
-"            <div class=\"description\" id=\"iDesc1\">" +
-"              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus" +
-"              sit amet volutpat dui. Cras sed vulputate augue, vel egestas quam." +
-"              Donec condimentum vitae orci sed bibendum." +
-"            </div>" +
-"          </div>" +
-"" +
-"          <div class=\"card\" draggable=\"true\">" +
-"            <div class=\"title\" id=\"iTitle2\">Task number 2</div>" +
-"            <div class=\"description\" id=\"iDesc2\">" +
-"              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus" +
-"              sit amet volutpat dui. Cras sed vulputate augue, vel egestas quam." +
-"              Donec condimentum vitae orci sed bibendum." +
-"            </div>" +
-"          </div>" +
-"" +
-"          <div class=\"card\" draggable=\"true\">" +
-"            <div class=\"title\" id=\"iTitle3\">Task number 3</div>" +
-"            <div class=\"description\" id=\"iDesc3\">" +
-"              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus" +
-"              sit amet volutpat dui. Cras sed vulputate augue, vel egestas quam." +
-"              Donec condimentum vitae orci sed bibendum." +
-"            </div>" +
-"          </div>" +
-"        </div>" +
-"      </div>" +
-"" +
-"      <div class=\"list\">" +
-"        <h1 id=\"name2\ class=\"cName\>In Progress</h1>" +
-"        <div class=\"draggingContainer\">" +
-"          <div class=\"card\" draggable=\"true\">" +
-"            <div class=\"title\"id=\"iTitle4\">Task number 5</div>" +
-"            <div class=\"description\" id=\"iDesc4\">" +
-"              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus" +
-"              sit amet volutpat dui. Cras sed vulputate augue, vel egestas quam." +
-"              Donec condimentum vitae orci sed bibendum." +
-"            </div>" +
-"          </div>" +
-"          <div class=\"card\" draggable=\"true\">" +
-"            <div class=\"title\" id=\"iTitle5\">Task number 6</div>" +
-"            <div class=\"description\" id=\"iDesc5\">" +
-"              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus" +
-"              sit amet volutpat dui. Cras sed vulputate augue, vel egestas quam." +
-"              Donec condimentum vitae orci sed bibendum." +
-"            </div>" +
-"          </div>" +
-"        </div>" +
-"      </div>" +
-"" +
-"      <div class=\"list\">" +
-"        <h1 id=\"name3\ class=\"cName\>In Review</h1>" +
-"        <div class=\"draggingContainer\">" +
-"          <div class=\"card\" draggable=\"true\">" +
-"            <div class=\"title\" id=\"iTitle6\">Task number 7</div>" +
-"            <div class=\"description\" id=\"iDesc6\">" +
-"              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus" +
-"              sit amet volutpat dui. Cras sed vulputate augue, vel egestas quam." +
-"              Donec condimentum vitae orci sed bibendum." +
-"            </div>" +
-"          </div>" +
-"        </div>" +
-"      </div>" +
-"" +
-"      <div class=\"list\">" +
-"        <h1 id=\"name4\ class=\"cName\>Done</h1>" +
-"        <div class=\"draggingContainer\">" +
-"          <div class=\"card\" draggable=\"true\">" +
-"            <div class=\"title\" id=\"iTitle7\">Task number 8</div>" +
-"            <div class=\"description\" id=\"iDesc7\">" +
-"              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus" +
-"              sit amet volutpat dui. Cras sed vulputate augue, vel egestas quam." +
-"              Donec condimentum vitae orci sed bibendum." +
-"            </div>" +
-"          </div>" +
-"        </div>" +
-"      </div>" +
-"    </div>" +
+"<section class=\"draggable-elements\">" +
+"      <img src=\"add image here\" class=\"draggable\" draggable=\"true\" style=\"color: #ff6384;\" id=\"img1\"/>" +
+"      <img src=\"add image here\" class=\"draggable\" draggable=\"true\" style=\"color: #36a2eb;\" id=\"img2\"/>" +
+"      <img src=\"add image here\" class=\"draggable\" draggable=\"true\" style=\"color: #ffce56;\" id=\"img3\"/>" +
+"      <img src=\"add image here\" class=\"draggable\" draggable=\"true\" style=\"color: #9966ff;\" id=\"img4\"/>" +
+"      <img src=\"add image here\" class=\"draggable\" draggable=\"true\" style=\"color: #4bc0c0;\" id=\"img5\"/>" +
+"    <section class=\"droppable-elements\">" +
+"      <div class=\"droppable\" data-draggable-id=\"img5\"><span>img5</span></div>" + 
+"      <div class=\"droppable\" data-draggable-id=\"img3\"><span>img3</span></div>" +
+"      <div class=\"droppable\" data-draggable-id=\"img1\"><span>img1</span></div>" +
+"      <div class=\"droppable\" data-draggable-id=\"img4\"><span>img4</span></div>" +
+"      <div class=\"droppable\" data-draggable-id=\"img2\"><span>img2</span></div>" +
+"</section>" +
 "";
 
 document.querySelector('body').innerHTML += (body);
 
-let cards = document.querySelectorAll('.card');
-let lists = document.querySelectorAll('.list');
+const draggableElements = document.querySelectorAll(".draggable");
+const droppableElements = document.querySelectorAll(".droppable");
 
-
-cards.forEach((card)=>{
-    registerEventsOnCard(card);
+draggableElements.forEach(elem => {
+  elem.addEventListener("dragstart", dragStart); // Fires as soon as the user starts dragging an item - This is where we can define the drag data
+  // elem.addEventListener("drag", drag); // Fires when a dragged item (element or text selection) is dragged
+  // elem.addEventListener("dragend", dragEnd); // Fires when a drag operation ends (such as releasing a mouse button or hitting the Esc key) - After the dragend event, the drag and drop operation is complete
 });
 
-lists.forEach((list)=>{
-    list.addEventListener('dragover', (e)=>{
-        e.preventDefault();
-        let draggingCard = document.querySelector('.dragging');
-        let cardAfterDraggingCard = getCardAfterDraggingCard(list, e.clientY);
-        if(cardAfterDraggingCard){
-
-                cardAfterDraggingCard.parentNode.insertBefore(draggingCard, cardAfterDraggingCard);
-        } else{
-            list.appendChild(draggingCard);
-        }
-
-    });
+droppableElements.forEach(elem => {
+  elem.addEventListener("dragenter", dragEnter); // Fires when a dragged item enters a valid drop target
+  elem.addEventListener("dragover", dragOver); // Fires when a dragged item is being dragged over a valid drop target, repeatedly while the draggable item is within the drop zone
+  elem.addEventListener("dragleave", dragLeave); // Fires when a dragged item leaves a valid drop target
+  elem.addEventListener("drop", drop); // Fires when an item is dropped on a valid drop target
 });
 
-function getCardAfterDraggingCard(list, yDraggingCard){
+// Drag and Drop Functions
 
-    let listCards = [...list.querySelectorAll('.card:not(.dragging)')];
+//Events fired on the drag target
 
-    return listCards.reduce((closestCard, nextCard)=>{
-        let nextCardRect = nextCard.getBoundingClientRect();
-        let offset = yDraggingCard - nextCardRect.top - nextCardRect.height /2;
-
-        if(offset < 0 && offset > closestCard.offset){
-            return {offset, element: nextCard}
-        } else{
-            return closestCard;
-        }
-
-    }, {offset: Number.NEGATIVE_INFINITY}).element;
-
+function dragStart(event) {
+  event.dataTransfer.setData("text", event.target.id); // or "text/plain" but just "text" would also be fine since we are not setting any other type/format for data value
 }
 
-function registerEventsOnCard(card){
-    card.addEventListener('dragstart', (e)=>{
-        card.classList.add('dragging');
-    });
+//Events fired on the drop target
 
+function dragEnter(event) {
+  if(!event.target.classList.contains("dropped")) {
+    event.target.classList.add("droppable-hover");
+  }
+}
 
-    card.addEventListener('dragend', (e)=>{
-        card.classList.remove('dragging');
-    });
+function dragOver(event) {
+  if(!event.target.classList.contains("dropped")) {
+    event.preventDefault(); // Prevent default to allow drop
+  }
+}
+
+function dragLeave(event) {
+  if(!event.target.classList.contains("dropped")) {
+    event.target.classList.remove("droppable-hover");
+  }
+}
+
+function drop(event) {
+  event.preventDefault(); // This is in order to prevent the browser default handling of the data
+  event.target.classList.remove("droppable-hover");
+  const draggableElementData = event.dataTransfer.getData("text"); // Get the dragged data. This method will return any data that was set to the same type in the setData() method
+  const droppableElementData = event.target.getAttribute("data-draggable-id");
+  const isCorrectMatching = draggableElementData === droppableElementData;
+  if(isCorrectMatching) {
+    const draggableElement = document.getElementById(draggableElementData);
+    event.target.classList.add("dropped");
+    // event.target.style.backgroundColor = draggableElement.style.color; // This approach works only for inline styles. A more general approach would be the following:
+    event.target.style.backgroundColor = window.getComputedStyle(draggableElement).color;
+    draggableElement.classList.add("dragged");
+    draggableElement.setAttribute("draggable", "false");
+    event.target.insertAdjacentHTML("afterbegin", `<i class="fas fa-${draggableElementData}"></i>`);
+  }
 }
