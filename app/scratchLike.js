@@ -1,19 +1,22 @@
-var body = "" + 
-"<ul id=\"dragElement\">" +
-"      <li><img src=\"image here\" alt=\"\"" +
-"        id =\"dragElement1\"></li>" +
-"      <li><img src=\"image here\" alt=\"\"" +
-"        id =\"dragElement2\"></li>" +
-"      <li><img src=\"image here\" alt=\"\"" +
-"        id =\"dragElement3\"></li>" +
-"      <li><img src=\"image here\" alt=\"\"" +
-"        id =\"dragElement4\"></li>" +
-"      <li><img src=\"image here\" alt=\"\"" +
-"        id =\"dragElement5\"></li>" +
-"    </ul>" +
+var body = "" +
+"<div>" +
+"        <div>" +
+"            <img src=\"\" alt=\"\"" +
+"            class=\"duplicate\" id=\"dragElement1\"/>" +
+"        </div>" +
 "" +
-"    <div id = \"dropLocation\"></div>" +
-"";
+"        <div>" +
+"            <img src=\"\" alt=\"\"" +
+"            class=\"duplicate\" id=\"dragElement2\"/>" +
+"        </div>" +
+"" +
+"        <div>" +
+"            <img src=\"\" alt=\"\"" +
+"            class=\"duplicate\" id=\"dragElement3\"/>" +
+"        </div>" +
+"    </div>" +
+"    <div id=\"dropLocation\">" +
+"    </div>" +
 "";
 
 document.querySelector('body').innerHTML += (body);
@@ -21,8 +24,6 @@ document.querySelector('body').innerHTML += (body);
 var dragItem1 = document.getElementById("dragElement1");
 var dragItem2 = document.getElementById("dragElement2");
 var dragItem3 = document.getElementById("dragElement3");
-var dragItem4 = document.getElementById("dragElement4");
-var dragItem5 = document.getElementById("dragElement5");
 
 var dropLoc = document.getElementById("dropLocation");
 
@@ -37,14 +38,6 @@ dragItem2.ondragstart = function(evt) {
 };
 
 dragItem3.ondragstart = function(evt) {
-  evt.dataTransfer.setData("key", evt.target.id)
-};
-
-dragItem4.ondragstart = function(evt) {
-  evt.dataTransfer.setData("key", evt.target.id)
-};
-
-dragItem5.ondragstart = function(evt) {
   evt.dataTransfer.setData("key", evt.target.id)
 };
 
