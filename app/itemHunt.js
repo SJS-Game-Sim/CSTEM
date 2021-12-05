@@ -18,6 +18,8 @@ newImg.setAttribute("width", width);
 newImg.setAttribute("height", height);
 newImg.setAttribute("alt", alt);
 newImg.setAttribute("onclick", onclick);
+img.addEventListener("mouseover", over, false);
+img.addEventListener("mouseout", out, false);
 
 addHere.appendChild(newImg);
 
@@ -58,6 +60,16 @@ newImg.onmousedown = function(event) {
 
 };
 
+function over() {
+   img.style.border = "10px solid #0000ff";
+   img.style.borderRadius = "10px";
+}
+
+function out() {
+  img.style.border = "none";
+  img.style.borderRadius = "0px";
+}
+
 var body = "" +
 "<section class=\"draggable-elements\">" +
 "      <img src=\"add image here\" class=\"draggable\" draggable=\"true\" style=\"color: #ff6384;\" id=\"img1\"/>" +
@@ -66,7 +78,7 @@ var body = "" +
 "      <img src=\"add image here\" class=\"draggable\" draggable=\"true\" style=\"color: #9966ff;\" id=\"img4\"/>" +
 "      <img src=\"add image here\" class=\"draggable\" draggable=\"true\" style=\"color: #4bc0c0;\" id=\"img5\"/>" +
 "    <section class=\"droppable-elements\">" +
-"      <div class=\"droppable\" data-draggable-id=\"img5\"><span>img5</span></div>" + 
+"      <div class=\"droppable\" data-draggable-id=\"img5\"><span>img5</span></div>" +
 "      <div class=\"droppable\" data-draggable-id=\"img3\"><span>img3</span></div>" +
 "      <div class=\"droppable\" data-draggable-id=\"img1\"><span>img1</span></div>" +
 "      <div class=\"droppable\" data-draggable-id=\"img4\"><span>img4</span></div>" +
