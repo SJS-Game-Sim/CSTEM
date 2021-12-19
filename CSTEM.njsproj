@@ -28,13 +28,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="app\assemblygame.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="app\itemHunt.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="app\scratchLike.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="app\wiringGame.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="server.js" />
