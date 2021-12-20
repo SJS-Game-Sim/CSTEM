@@ -1,57 +1,119 @@
-var body = "" +
-"<div>" +
-"        <div>" +
-"            <img src=\"\" alt=\"\"" +
-"            class=\"duplicate\" id=\"dragElement1\"/>" +
-"        </div>" +
-"" +
-"        <div>" +
-"            <img src=\"\" alt=\"\"" +
-"            class=\"duplicate\" id=\"dragElement2\"/>" +
-"        </div>" +
-"" +
-"        <div>" +
-"            <img src=\"\" alt=\"\"" +
-"            class=\"duplicate\" id=\"dragElement3\"/>" +
-"        </div>" +
-"    </div>" +
-"    <div id=\"dropLocation\">" +
-"    </div>" +
-"";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import "./ScratchLike.css";
+var btnC = ["homeButton", "scratchButton", "wireButton", "itemHuntButton"];
 
-document.querySelector('body').innerHTML += (body);
 
-var dragItem1 = document.getElementById("dragElement1");
-var dragItem2 = document.getElementById("dragElement2");
-var dragItem3 = document.getElementById("dragElement3");
-
-var dropLoc = document.getElementById("dropLocation");
-
-//this event will be fire when the user starts dragging the item
-
-dragItem1.ondragstart = function(evt) {
-  evt.dataTransfer.setData("key", evt.target.id)
-};
-
-dragItem2.ondragstart = function(evt) {
-  evt.dataTransfer.setData("key", evt.target.id)
-};
-
-dragItem3.ondragstart = function(evt) {
-  evt.dataTransfer.setData("key", evt.target.id)
-};
-
-//this event will be fire when an element selection is  being dragged over a valid drop location
-dropLocation.ondragover = function(evt) {
-  evt.preventDefault();
+// buttons navigation on the top screen
+class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className={this.props.divN}>
+        <Button nav={btnC[0]}/>
+        <Button nav={btnC[1]} />
+        <Button nav={btnC[2]}/>
+        <Button nav={btnC[3]}/>
+      </div>
+    )
+  }
 }
 
-//this will be fire when u drop the dragged item on the drop location
-dropLoc.ondrop = function(evt) {
-  var dropItem = evt.dataTransfer.getData("key");
-  evt.preventDefault();
-  var myElement = document.getElementById(dropItem);
-  var myNewElement = document.createElement("img");
-  myNewElement.src = myElement.src;
-  dropLoc.appendChild(myNewElement);
+// navigation buttons
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return(
+      <button className={this.props.nav}></button>
+    )
+  }
 }
+
+// draggable images items
+class Item extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <img 
+    className='draggable'
+    draggable={this.props.draggable}
+    className={this.props.imgC}
+    src={this.props.item}
+    alt={this.props.desc}
+    id={this.props.imgId}
+    />
+  }
+}
+
+// draggable item area
+class DragElement extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className='draggable-elements'>
+      </div>
+    )
+  }
+}
+
+// right square where player drops Items 
+class DropElement extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className='droppable-elements'></div>
+    )
+  }
+}
+
+// top div that goes above navigation
+class TopBox extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render () {
+    return (
+      <div className='topBox'>
+        <DragElement />
+        <DropElement />
+      </div>
+    )
+  }
+}
+
+// holds all the main classes together
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className={this.props.con}>
+        <TopBox />
+        <Navigation divN={'navigation'}/>
+      </div>
+    )
+  }
+}
+
+// renders everything Item Hunt screen
+class ScratchLike extends React.Component {
+  render() {
+    return (
+      <Container con={'container'} />
+    )
+  }
+}
+
+ReactDOM.render(
+  <ScratchLike />, 
+  document.getElementById("root"));
