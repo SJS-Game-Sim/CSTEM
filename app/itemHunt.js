@@ -1,144 +1,150 @@
-var body = "" +
-"<section class=\"draggable-items\">" +
-"</section>" +
-"<section class=\"matching-pairs\">" +
-"</section>" +
-"";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import "./index.css";
+import batteries from "./Batteries.png";
+var btnC = ["homeButton", "scratchButton", "wireButton", "itemHuntButton"];
+var drop = "dropHere";
 
-document.querySelector('body').innerHTML += (body);
 
-const brands = [
-  {
-    itemLink: "",
-    itemName: ""
-  },
-  {
-    itemLink: "",
-    itemName: ""
-  },
-  {
-    itemLink: "",
-    itemName: ""
-  },
-  {
-    itemLink: "",
-    itemName: ""
-  },
-  {
-    itemLink: "",
-    itemName: ""
+// buttons navigation on the top screen
+class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
   }
-];
-let correct = 0;
-let total = 0;
-const totalDraggableItems = 5;
-const totalMatchingPairs = 5; // Should be <= totalDraggableItems
-
-const draggableItems = document.querySelector(".draggable-items");
-const matchingPairs = document.querySelector(".matching-pairs");
-let draggableElements;
-let droppableElements;
-
-initiateGame();
-
-function initiateGame() {
-  const randomDraggableItems = generateRandomItemsArray(totalDraggableItems, brands);
-  const randomDroppableBrands = totalMatchingPairs<totalDraggableItems ? generateRandomItemsArray(totalMatchingPairs, randomDraggableItems) : randomDraggableItems;
-  const alphabeticallySortedRandomDroppableItem = [...randomDroppableBrands].sort((a,b) => a.itemName.toLowerCase().localeCompare(b.itemName.toLowerCase()));
-
-  // Create "draggable-items" and append to DOM
-  for(let i=0; i<randomDraggableItems.length; i++) {
-    draggableItems.insertAdjacentHTML("beforeend", `
-      <img src="${randomDraggableItems[i].itemLink}" class="draggable" draggable="true" id="${randomDraggableItems[i].itemLink}">
-    `);
-  }
-
-  // Create "matching-pairs" and append to DOM
-  for(let i=0; i<alphabeticallySortedRandomDroppableItem.length; i++) {
-    matchingPairs.insertAdjacentHTML("beforeend", `
-      <div class="matching-pair">
-        <span class="label">${alphabeticallySortedRandomDroppableItem[i].itemName}</span>
-        <span class="droppable" data-brand="${alphabeticallySortedRandomDroppableItem[i].itemLink}"></span>
+  render() {
+    return (
+      <div className={this.props.divN}>
+        <Button nav={btnC[0]}/>
+        <Button nav={btnC[1]} />
+        <Button nav={btnC[2]}/>
+        <Button nav={btnC[3]}/>
       </div>
-    `);
-  }
-
-  draggableElements = document.querySelectorAll(".draggable");
-  droppableElements = document.querySelectorAll(".droppable");
-
-  draggableElements.forEach(elem => {
-    elem.addEventListener("dragstart", dragStart);
-    // elem.addEventListener("drag", drag);
-    // elem.addEventListener("dragend", dragEnd);
-  });
-
-  droppableElements.forEach(elem => {
-    elem.addEventListener("dragenter", dragEnter);
-    elem.addEventListener("dragover", dragOver);
-    elem.addEventListener("dragleave", dragLeave);
-    elem.addEventListener("drop", drop);
-  });
-}
-
-// Drag and Drop Functions
-
-//Events fired on the drag target
-
-function dragStart(event) {
-  event.dataTransfer.setData("text", event.target.id); // or "text/plain"
-}
-
-//Events fired on the drop target
-
-function dragEnter(event) {
-  if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
-    event.target.classList.add("droppable-hover");
+    )
   }
 }
 
-function dragOver(event) {
-  if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
-    event.preventDefault();
+// navigation buttons
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return(
+      <button className={this.props.nav}></button>
+    )
   }
 }
 
-function dragLeave(event) {
-  if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
-    event.target.classList.remove("droppable-hover");
+// draggable images items
+class Item extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <img 
+    className='draggable'
+    draggable ='true'
+    className={this.props.imgC}
+    src={this.props.item}
+    alt={this.props.desc}
+    id={this.props.imgId}
+    />
   }
 }
 
-function drop(event) {
-  event.preventDefault();
-  event.target.classList.remove("droppable-hover");
-  const draggableElementBrand = event.dataTransfer.getData("text");
-  const droppableElementBrand = event.target.getAttribute("data-brand");
-  const isCorrectMatching = draggableElementBrand===droppableElementBrand;
-  total++;
-  if(isCorrectMatching) {
-    const draggableElement = document.getElementById(draggableElementBrand);
-    event.target.classList.add("dropped");
-    draggableElement.classList.add("dragged");
-    draggableElement.setAttribute("draggable", "false");
-    correct++;
+// draggable item area
+class DragElement extends React.Component {
+  constructor(props) {
+    super(props);
   }
-  setTimeout(() => {
-  }, 200);
-  if(correct===Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
-    setTimeout(() => {
-    }, 200);
+  render() {
+    return (
+      <div className='draggable-elements'>
+        <Item item={batteries} imgC={"batteries"}/>
+      </div>
+    )
   }
 }
 
-// Auxiliary functions
-function generateRandomItemsArray(n, originalArray) {
-  let res = [];
-  let clonedArray = [...originalArray];
-  if(n>clonedArray.length) n=clonedArray.length;
-  for(let i=1; i<=n; i++) {
-    const randomIndex = Math.floor(Math.random()*clonedArray.length);
-    res.push(clonedArray[randomIndex]);
-    clonedArray.splice(randomIndex, 1);
+// left square that match the Item that is dragged
+class Match extends React.Component {
+  constructor(props) {
+    super(props);
   }
-  return res;
+  render() {
+    return (
+      <div className='find'>
+        <Square />
+      </div>
+    )
+  }
 }
+
+// right square where player drops Items 
+class DropElement extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className='droppable-elements'>
+        <Square inside={drop}/>
+      </div>
+    )
+  }
+}
+
+// the class the renders squares 
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className="square">
+        <div className={this.props.inside}></div>
+      </div>
+    )
+  }
+}
+
+// holds the classes match and dropElement
+class ItemBox extends React.Component {
+  render() {
+    return (
+      <div>
+        <Match />
+        <DropElement />
+      </div>
+    )
+  }
+}
+
+// holds all the main classes together
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div className={this.props.con}>
+        <Navigation divN={'navigation'}/>
+        <DragElement />
+        <ItemBox />
+      </div>
+    )
+  }
+}
+
+// renders everything Item Hunt screen
+class ItemHunt extends React.Component {
+  render() {
+    return (
+      <Container con={'container'} />
+    )
+  }
+}
+
+ReactDOM.render(
+  <ItemHunt />, 
+  document.getElementById("root"));
