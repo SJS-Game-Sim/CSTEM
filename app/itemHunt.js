@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "./index.css";
+import "./ItemHunt.css";
 import batteries from "./Batteries.png";
 var btnC = ["homeButton", "scratchButton", "wireButton", "itemHuntButton"];
 var drop = "dropHere";

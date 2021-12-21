@@ -1,0 +1,182 @@
+.square {
+    height: 6.5rem;
+    width: 6.5rem;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    background-color: #fdfdce;
+    border: 3px dashed #111;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid #aaaaaa;
+}
+
+.navigation {
+    justify-content: center;
+    align-items: center;
+    width: max;
+    height: 50%;
+    padding: 2%;
+    background-color: #fdfdce;
+    border: 2px solid #aaaaaa;
+}
+
+.draggable-elements {
+    width: max;
+    height: 600px;
+    background-color: #fff;
+    border: 2px solid #aaaaaa;
+}
+
+.itemSize {
+    width: 200px;
+    height: 200px;
+}
+
+.find {
+    width: 49%;
+    height: 150px;
+    background-color: #fcf8b2;
+    border: 2px solid #aaaaaa;
+    float: left;
+}
+
+.droppable-elements {
+    width: 50%;
+    height: 150px;
+    background-color: #fcf8b2;
+    border: 2px solid #aaaaaa;
+    float: right;
+    
+}
+
+.sideImg {
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+
+.sideImg:after {
+    content: url("./Batteries.png");
+}
+
+.dropHere {
+    font-size: 15px;
+}
+
+.dropHere:after {
+    content: "Drop Here";
+}
+
+.batteries {
+    height: 200px;
+    width: 200px;
+}
+
+.homeButton {
+    color: #b30000;
+    padding:20px 60px;
+    outline: none;
+    background-color: #ff8080;
+    border: none;
+    border-radius:75px;
+    box-shadow: 0 9px #ff4d4d;
+    font-size:22px;
+}
+
+.homeButton:hover{
+    background-color: #fc9c9c;
+}
+
+.homeButton:active {
+    background-color: #ff8080;
+    box-shadow: 0 5px #ff4d4d;
+    transform: translateY(4px);
+}
+
+.homeButton:after {
+    content: "Home";
+}
+
+.scratchButton {
+    color: #043daf;;
+    padding:20px 60px;
+    outline: none;
+    background-color: #80aaff;
+    border: none;
+    border-radius:75px;
+    box-shadow: 0 9px #5189fb;
+    font-size:22px;
+}
+
+.scratchButton:hover{
+    background-color: #99bbff;
+}
+
+.scratchButton:active {
+    background-color: #80aaff;
+    box-shadow: 0 5px #5189fb;
+    transform: translateY(4px);
+}
+
+.scratchButton:after {
+    content: "Scratch";
+}
+
+.wireButton {
+    color: #219150;
+    padding:20px 60px;
+    outline: none;
+    background-color: #82e3aa;
+    border: none;
+    border-radius:75px;
+    box-shadow: 0 9px #2ecc71;
+    font-size:22px;
+}
+
+.wireButton:hover{
+    background-color: #adebc9;
+}
+
+.wireButton:active {
+    background-color: #82e3aa;
+    box-shadow: 0 5px #2ecc71;
+    transform: translateY(4px);
+}
+
+.wireButton:after {
+    content: "Assembly";
+}
+
+.itemHuntButton {
+    color: #999900;
+    padding:20px 60px;
+    outline: none;
+    background-color: #f9f986;
+    border: none;
+    border-radius:75px;
+    box-shadow: 0 9px #cccc00;
+    font-size:22px;
+}
+
+.itemHuntButton:hover{
+    background-color: #ffffb3;
+}
+
+.itemHuntButton:active {
+    background-color: #f9f986;
+    box-shadow: 0 5px #cccc00;
+    transform: translateY(4px);
+}
+
+.itemHuntButton:after {
+    content: "Item Hunt";
+}
