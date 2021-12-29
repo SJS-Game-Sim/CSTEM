@@ -42,10 +42,10 @@
 }
 
 .find {
-    width: 49%;
+    width: 50%;
     height: 150px;
     background-color: #fcf8b2;
-    border: 2px solid #aaaaaa;
+    outline: 2px solid #aaaaaa;
     float: left;
 }
 
@@ -53,7 +53,7 @@
     width: 50%;
     height: 150px;
     background-color: #fcf8b2;
-    border: 2px solid #aaaaaa;
+    outline: 2px solid #aaaaaa;
     float: right;
     
 }
