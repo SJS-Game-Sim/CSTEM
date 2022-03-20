@@ -28,21 +28,21 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app\assemblygame.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="app\itemHunt.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="app\scratchLike.js">
-      <SubType>Code</SubType>
-    </Content>
+    <Content Include="LICENSE.MD" />
+    <Content Include="public\index.html" />
     <Content Include="server.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\app.js" />
+    <Content Include="src\index.js" />
+    <Content Include="src\modules\assemblygame.js" />
+    <Content Include="src\modules\itemHunt.js" />
+    <Content Include="src\modules\logicGame.js" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\" />
+    <Folder Include="public\" />
+    <Folder Include="src\" />
+    <Folder Include="src\modules\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
