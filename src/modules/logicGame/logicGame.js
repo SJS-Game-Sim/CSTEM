@@ -4,9 +4,16 @@
  * @author Kevin Segarra
  * */
 
+const { logicLevels } = require("./logicLevels")
+
 function LogicGame() {
     <div className='LogicGame'>
     </div>
+}
+
+function createBoard(level) {
+    var curLevel = logicData.logicLevels[level];
+
 }
 
 
