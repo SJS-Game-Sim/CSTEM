@@ -4,7 +4,13 @@
  * @author Kevin Segarra
  * */
 
-var body = "" +
+function LogicGame() {
+    <div className='LogicGame'>
+    </div>
+}
+
+
+/*var body = "" +
 "<div>" +
 "        <div>" +
 "            <img src=\"\" alt=\"\"" +
@@ -60,4 +66,4 @@ dropLoc.ondrop = function(evt) {
   var myNewElement = document.createElement("img");
   myNewElement.src = myElement.src;
   dropLoc.appendChild(myNewElement);
-}
+}*/

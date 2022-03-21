@@ -4,7 +4,13 @@
  * @author Kevin Segarra
  * */
 
-var body = "" +
+function huntGame() {
+    <div className="huntGame">
+    </div>
+}
+
+// TODO: Remove this section after refactor.
+/*var body = "" +
 "<section class=\"draggable-items\">" +
 "</section>" +
 "<section class=\"matching-pairs\">" +
@@ -147,4 +153,4 @@ function generateRandomItemsArray(n, originalArray) {
     clonedArray.splice(randomIndex, 1);
   }
   return res;
-}
+}*/
