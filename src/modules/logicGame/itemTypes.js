@@ -1,1 +1,3 @@
-export const ITEM = 
+export const ItemTypes = {
+    BUBBLE: 'bubble'
+}

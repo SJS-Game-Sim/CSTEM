@@ -8,5 +8,8 @@ export const logicData = {
             columns: 1,
             answer: ["TURN_RIGHT", "MOVE_FORWARD", "MOVE_FORWARD", "TURN_LEFT", "MOVE_FORWARD"]
         }
+    },
+    commands: {
+        "MOVE_FORWARD": {}
     }
 }

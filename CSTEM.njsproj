@@ -37,11 +37,14 @@
     <Content Include="src\index.js" />
     <Content Include="src\modules\assemblyGame\assemblygame.js" />
     <Content Include="src\modules\huntGame\huntGame.js" />
+    <Content Include="src\modules\logicGame\Bubble.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\modules\logicGame\itemTypes.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\modules\logicGame\logicGame.js" />
-    <Content Include="src\modules\logicGame\logicLevels.js">
+    <Content Include="src\modules\logicGame\logicData.js">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
