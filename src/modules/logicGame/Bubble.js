@@ -1,9 +1,20 @@
 import React from 'react'
+import { useDrag } from 'react-dnd'
+import './LogicGame.css'
 
-export default function Bubble({ command, dragClass }) {
+export default function Bubble(text) {
+    const [{ isDragging }, drag] = useDrag(() => ({
+        // Type works with drop locations to determine if this item can be dropped there.
+        type: 'Bubble',
+        // Collect is a builtin property of react-dnd drag hook. Pulls state from DnD
+        collect: (monitor) => ({
+            isDragging: monitor.isDragging()
+        })
+    }))
+
     return (
         <div className="bubble">
-            <h3>{command.title}</h3>
+            <h3>{text}</h3>
         </div>
     );
 }

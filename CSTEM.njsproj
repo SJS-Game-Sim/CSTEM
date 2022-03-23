@@ -49,6 +49,9 @@
     <Content Include="src\modules\logicGame\ItemTypes.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\modules\logicGame\LogicGame.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\modules\logicGame\logicGame.js" />
     <Content Include="src\modules\logicGame\logicData.js">
       <SubType>Code</SubType>
