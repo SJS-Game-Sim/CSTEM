@@ -6,7 +6,7 @@ import './logicGame.css'
 function Cell() {
     const [{ canDrop, isOver }, drop] = useDrop(() => ({
         // Type to accept. Defined in ItemTypes.
-        accept: 'Bubble',
+        accept: ItemTypes.BUBBLE,
         //Collection
         collect: (monitor) => ({
             isOver: monitor.isOver(),
