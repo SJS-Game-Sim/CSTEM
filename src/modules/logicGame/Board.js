@@ -7,20 +7,16 @@ function renderCell() {
 
 }
 
-export default function Board(cols, rows) {
-    const cells = []
-    for (let i = 0; i <= cols * rows; i++) {
-        cells.push(renderCell())
-    }
+export default function Board({ logicData }) {
 
-    return (
-        <div style={{
+    return <DndProvider backend={HTML5Backend}>
+        <div className='board' style={{
             width: '100%',
             height: '100%',
             display: 'flex',
             flexWrap: 'wrap'
         }}>
-            {cells}
+            {rows}
         </div>
-    )
+    </DndProvider>
 }

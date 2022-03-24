@@ -14,7 +14,7 @@ export default function Bubble(text) {
     }))
 
     return (
-        <div className="bubble">
+        <div className="bubble" ref={drag}>
             <h3>{text}</h3>
         </div>
     );

@@ -33,37 +33,25 @@
     <Content Include="server.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="src\app.js" />
+    <Content Include="src\App.js" />
     <Content Include="src\index.js" />
     <Content Include="src\modules\assemblyGame\assemblygame.js" />
     <Content Include="src\modules\huntGame\huntGame.js" />
-    <Content Include="src\modules\logicGame\Board.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\modules\logicGame\Bubble.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\modules\logicGame\Cell.jsx">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\modules\logicGame\ItemTypes.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\modules\logicGame\LogicGame.css">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\modules\logicGame\logicGame.js" />
-    <Content Include="src\modules\logicGame\logicData.js">
-      <SubType>Code</SubType>
-    </Content>
+    <Content Include="src\modules\logicGame\Board.js" />
+    <Content Include="src\modules\logicGame\Bubble.js" />
+    <Content Include="src\modules\logicGame\Cell.jsx" />
+    <Content Include="src\modules\logicGame\ItemTypes.js" />
+    <Content Include="src\modules\logicGame\LogicData.js" />
+    <Content Include="src\modules\logicGame\LogicGame.css" />
+    <Content Include="src\modules\logicGame\LogicGame.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\" />
     <Folder Include="src\" />
     <Folder Include="src\modules\" />
-    <Folder Include="src\modules\logicGame\" />
     <Folder Include="src\modules\assemblyGame\" />
     <Folder Include="src\modules\huntGame\" />
+    <Folder Include="src\modules\logicGame\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

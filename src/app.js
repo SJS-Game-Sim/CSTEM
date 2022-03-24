@@ -6,6 +6,9 @@ import ReactDOM from "react-dom";
 function App() {
     <DndProvider backend={HTML5Backend}>
         <div className='App'>
+            <Nav />
+            <Board />
+            <Output />
         </div>
     </DndProvider>
 }

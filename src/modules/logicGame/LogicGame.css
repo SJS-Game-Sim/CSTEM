@@ -1,4 +1,26 @@
+/* Board Styling */
+.board {}
 
+/* Bubble Styling */
+.bubble {
+    width: 25%;
+    height: 790px;
+    background-color: #e7f7ff;
+    outline: 2px solid #000000;
+}
 
-/* Bubble Styling*/
-.bubble {}
+/* Cell Styling */
+.cell {
+    color: #043daf;
+    ;
+    padding: 20px 60px;
+    outline: none;
+    background-color: #80aaff;
+    border: none;
+    border-radius: 75px;
+    box-shadow: 0 9px #5189fb;
+    font-size: 22px;
+}
+
+/* Row Styling */
+.row {}
