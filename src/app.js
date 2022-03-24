@@ -1,14 +1,15 @@
 import React from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import ReactDOM from "react-dom";
+import { LogicGame } from './modules/logicGame/LogicGame.js'
 
-function App() {
-    <DndProvider backend={HTML5Backend}>
-        <div className='App'>
-            <Nav />
-            <Board />
-            <Output />
-        </div>
-    </DndProvider>
+export default function App() {
+
+    return (
+        <DndProvider backend={HTML5Backend}>
+            <div className='App'>
+                <LogicGame />
+            </div>
+        </DndProvider>
+    )    
 }

@@ -3,7 +3,7 @@ import { useDrop } from 'react-dnd'
 import { ItemTypes } from './ItemTypes'
 import './logicGame.css'
 
-function Cell() {
+function Cell(props) {
     const [{ canDrop, isOver }, drop] = useDrop(() => ({
         // Type to accept. Defined in ItemTypes.
         accept: ItemTypes.BUBBLE,

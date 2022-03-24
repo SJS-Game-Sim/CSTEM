@@ -8,7 +8,7 @@ export default function Row(props) {
     return (
         <div className={this.props.className}>
             {CELLS.map(cell => (
-                <Cell text={cell} key={cell}/>
+                <Cell text={cell} key={cell} />
             ))}
         </div>
     )
