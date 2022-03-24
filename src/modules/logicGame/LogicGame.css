@@ -10,17 +10,7 @@
 }
 
 /* Cell Styling */
-.cell {
-    color: #043daf;
-    ;
-    padding: 20px 60px;
-    outline: none;
-    background-color: #80aaff;
-    border: none;
-    border-radius: 75px;
-    box-shadow: 0 9px #5189fb;
-    font-size: 22px;
-}
+.cell {}
 
 /* Row Styling */
 .row {}

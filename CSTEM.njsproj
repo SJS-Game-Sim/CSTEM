@@ -44,6 +44,9 @@
     <Content Include="src\modules\logicGame\LogicData.js" />
     <Content Include="src\modules\logicGame\LogicGame.css" />
     <Content Include="src\modules\logicGame\LogicGame.js" />
+    <Content Include="src\modules\logicGame\Row.js">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\" />
