@@ -1,13 +1,10 @@
 import React from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import logicData from '.logicData'
+import { Row } from './Row'
 
-function renderCell() {
-
-}
-
-export default function Board({ logicData }) {
+export default function Board(props) {
+    const { ROWS } = props
 
     return <DndProvider backend={HTML5Backend}>
         <div className='board' style={{
@@ -16,7 +13,9 @@ export default function Board({ logicData }) {
             display: 'flex',
             flexWrap: 'wrap'
         }}>
-            {rows}
+            {ROWS.map(row => (
+                <Row CELLS={row.CELLS} key={row.id} />
+            ))}
         </div>
     </DndProvider>
 }
