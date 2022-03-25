@@ -9,19 +9,34 @@ import Board from './Board'
 
 const { logicData } = require('./LogicData').logicData
 
-function createRows(col, answer) {
+function createCells(props) {
+    const CELLS = []
+
+
+    return CELLS
+}
+
+function createRows(props) {
+    // Create a number of rows based on number of entries in {answer}
+    const ROWS = []
+    for (const i = 0; i <= props.answer.length; i++) {
+        ROWS.push({
+            CELLS = createCells(amount = props.amount, answer = props.answer),
+            id = i
+        })
+    }
+    return ROWS
+}
+
+function createBoard({ logicData }, props) {
+    const curLevel = logicData.levelData[this.props.level]
+    const ROWS = createRows(amount = curLevel.columns, answer = curLevel.answer)
 
 }
 
-export default class LogicGame extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+export default function LogicGame(props) {
+    const [level, setLevel] = useState(1)
 
-    createBoard({ logicData }, props) {
-        const curLevel = logicData.levelData[this.props.level]
-        const ROWS = createRows(curLevel.columns, curLevel.answer)
-    }
 }
 
 /*var body = "" +

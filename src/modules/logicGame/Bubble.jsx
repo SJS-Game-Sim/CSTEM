@@ -3,7 +3,8 @@ import { useDrag } from 'react-dnd'
 import { ItemTypes } from './itemTypes'
 import './LogicGame.css'
 
-export default function Bubble(props) {
+const Bubble = props => {
+    const id = props
     const [{ isDragging }, drag] = useDrag(() => ({
         // Type works with drop locations to determine if this item can be dropped there.
         type: ItemTypes.BUBBLE,
@@ -15,8 +16,9 @@ export default function Bubble(props) {
 
     return (
         <div className="bubble" ref={drag}>
-            <h3>{this.props.text}</h3>
+            <h3>{props.text}</h3>
         </div>
     )
 }
 
+export default Bubble
