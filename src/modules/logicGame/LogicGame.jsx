@@ -9,19 +9,13 @@ import Board from './Board'
 
 const { logicData } = require('./LogicData').logicData
 
-function createCells(props) {
-    const CELLS = []
-
-
-    return CELLS
-}
 
 function createRows(props) {
     // Create a number of rows based on number of entries in {answer}
     const ROWS = []
     for (const i = 0; i <= props.answer.length; i++) {
         ROWS.push({
-            CELLS = createCells(amount = props.amount, answer = props.answer),
+            bubbles = createCells(amount = props.amount, answer = props.answer),
             id = i
         })
     }

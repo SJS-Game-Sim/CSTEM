@@ -15,7 +15,7 @@ export default function Board(props) {
                 flexWrap: 'wrap'
             }}>
                 {ROWS.map(row => (
-                    <Row CELLS={row.CELLS} key={row.id} />
+                    <Row bubbles={row.bubbles} key={row.id} className={row.className} />
                 ))}
             </div>
         </DndProvider>

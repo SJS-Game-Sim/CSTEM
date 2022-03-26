@@ -39,14 +39,11 @@
     <Content Include="src\modules\huntGame\huntGame.js" />
     <Content Include="src\modules\logicGame\Board.jsx" />
     <Content Include="src\modules\logicGame\Bubble.jsx" />
-    <Content Include="src\modules\logicGame\Cell.jsx" />
+    <Content Include="src\modules\logicGame\Row.jsx" />
     <Content Include="src\modules\logicGame\ItemTypes.js" />
     <Content Include="src\modules\logicGame\LogicData.js" />
     <Content Include="src\modules\logicGame\LogicGame.css" />
     <Content Include="src\modules\logicGame\LogicGame.jsx" />
-    <Content Include="src\modules\logicGame\Row.jsx">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="src\Nav.js">
       <SubType>Code</SubType>
     </Content>
