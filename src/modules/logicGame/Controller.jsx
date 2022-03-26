@@ -7,29 +7,49 @@
 import React, { useState } from 'react'
 import Board from './Board'
 
-const { logicData } = require('./LogicData').logicData
+const { logicData } = require('./Data').logicData
 
+const createBubbles = props => {
+    const bubbles = [props.answer]
+    while (bubbles.length <= props.amount) {
+        if (bubbles.length >= logicData.commands.length) break
+        const bubble = logicData.commands[Math.floor(Math.random() * bubbles.length)]
+        if (this.bubbles.indexOf(bubble) === -1) {
+            this.bubbles.push(bubble)
+        }
+    }
+    // Durstenfeld Shuffle courtesy of Laurens Holst, StackOverflow
+    for (let i = bubbles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [bubbles[i], bubbles[j]] = [bubbles[j], bubbles[i]];
+    }
+    return bubbles
+}
 
-function createRows(props) {
+const createRows = props => {
     // Create a number of rows based on number of entries in {answer}
-    const ROWS = []
+    const rows = []
     for (const i = 0; i <= props.answer.length; i++) {
-        ROWS.push({
-            bubbles = createCells(amount = props.amount, answer = props.answer),
+        rows.push({
+            bubbles = createBubbles(amount = props.amount, answer = props.answer[i]),
             id = i
         })
     }
-    return ROWS
+    return rows
 }
 
-function createBoard({ logicData }, props) {
-    const curLevel = logicData.levelData[this.props.level]
-    const ROWS = createRows(amount = curLevel.columns, answer = curLevel.answer)
-
+const createBoard = props => {
+    const curLevel = logicData.levels[this.props.level]
+    const rows = createRows(amount = curLevel.amount, answer = curLevel.answer)
+    return (
+        <>
+            <Board row={rows}/>
+        </>
+    )
 }
 
 export default function LogicGame(props) {
-    const [level, setLevel] = useState(1)
+    const [level, setLevel] = useState(0)
 
 }
 

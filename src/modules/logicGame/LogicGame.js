@@ -1,0 +1,1 @@
+export { LogicGame as default } from './Controller'

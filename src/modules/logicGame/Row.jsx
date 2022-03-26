@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react'
 import update from 'immutability-helper'
 import { Bubble } from './Bubble'
 import { ItemTypes } from './itemTypes'
+import './styles.css'
 
 export const Row = (props) => {
     {

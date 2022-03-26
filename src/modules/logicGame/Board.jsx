@@ -4,7 +4,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { Row } from './Row'
 
 export default function Board(props) {
-    const { ROWS } = props
+    const { rows } = props
 
     return (
         <DndProvider backend={HTML5Backend}>
@@ -14,8 +14,8 @@ export default function Board(props) {
                 display: 'flex',
                 flexWrap: 'wrap'
             }}>
-                {ROWS.map(row => (
-                    <Row bubbles={row.bubbles} key={row.id} className={row.className} />
+                {rows.map(row => (
+                    <Row BUBBLES={row.bubbles} key={row.id} className={row.className} />
                 ))}
             </div>
         </DndProvider>

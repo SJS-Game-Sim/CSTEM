@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
 import { ItemTypes } from './itemTypes'
-import './LogicGame.css'
+import './styles.css'
 
 export const Bubble = ({id, text, index, moveBubble}) => {
     const ref = useRef(null)
