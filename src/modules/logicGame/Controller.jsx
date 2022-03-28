@@ -29,18 +29,23 @@ const createBubbles = props => {
 const createRows = props => {
     // Create a number of rows based on number of entries in {answer}
     const rows = []
-    for (const i = 0; i <= props.answer.length; i++) {
+	const answer = { props }
+	const amount = { props }
+    for (let i = 0; i <= props.answer.length; i++) {
         rows.push({
-            bubbles = createBubbles(amount = props.amount, answer = props.answer[i]),
-            id = i
+            bubbles: createBubbles(amount, answer[i]),
+            id: i
         })
     }
     return rows
 }
 
 const createBoard = props => {
-    const curLevel = logicData.levels[this.props.level]
-    const rows = createRows(amount = curLevel.amount, answer = curLevel.answer)
+	const level = { props }
+    const curLevel = logicData.levels[level]
+	const amount = curLevel.amount
+	const answer = curLevel.answer
+    const rows = createRows(amount, answer)
     return (
         <>
             <Board row={rows}/>
@@ -48,9 +53,10 @@ const createBoard = props => {
     )
 }
 
-export default function LogicGame(props) {
+export function LogicGame(props) {
+	// eslint-disable-next-line
     const [level, setLevel] = useState(0)
-
+    return createBoard(level)
 }
 
 /*var body = "" +

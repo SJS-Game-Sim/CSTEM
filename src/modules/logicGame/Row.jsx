@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react'
 import update from 'immutability-helper'
+//import { useDrop } from 'react-dnd'
 import { Bubble } from './Bubble'
-import { ItemTypes } from './itemTypes'
+//import { ItemTypes } from './itemTypes'
 import './styles.css'
 
 export const Row = (props) => {
@@ -25,6 +26,7 @@ export const Row = (props) => {
             )
         }, [])
 
+	/*
         // Enable row as a droppable area
         const [{ canDrop, isOver }, drop] = useDrop(() => ({
             // Type to accept. Defined in ItemTypes.
@@ -35,7 +37,8 @@ export const Row = (props) => {
                 canDrop: monitor.canDrop()
             })
         }))
-
+	*/
+	
         // Returns a variable amount of 'Cell' object to hold 'Bubbles'.
         // Requires a className for CSS shading.
         return (<>

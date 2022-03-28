@@ -6,6 +6,5 @@ export const logicData = {
             answer: ["TURN RIGHT", "MOVE FORWARD", "MOVE FORWARD", "TURN LEFT", "MOVE FORWARD"]
         }
     },
-    commands: ["MOVE FORWARD", "MOVE BACK", "TURN LEFT", "TURN RIGHT"]
-        
+    commands: ["MOVE FORWARD", "MOVE BACK", "TURN LEFT", "TURN RIGHT","STOP"],
 }

@@ -18,7 +18,7 @@ export const Bubble = ({id, text, index, moveBubble}) => {
                 return
             }
             const dragIndex = item.index
-            const hoverIndex = props.index
+            const hoverIndex = index
             if (dragIndex === hoverIndex) {
                 return
             }
@@ -27,7 +27,7 @@ export const Bubble = ({id, text, index, moveBubble}) => {
             item.index = hoverIndex
         }
     })
-
+	// eslint-disable-next-line
     const [{ isDragging }, drag] = useDrag({
         // Type works with drop locations to determine if this item can be dropped there.
         type: ItemTypes.BUBBLE,
