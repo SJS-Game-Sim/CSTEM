@@ -3,14 +3,16 @@
 
 /* Bubble Styling */
 .bubble {
-    width: 25%;
-    height: 790px;
-    background-color: #e7f7ff;
-    outline: 2px solid #000000;
+    color: #222020;
+    /*^changes font color*/
+    padding: 15px 30px;
+    outline: none;
+    /*background-color: #ff8080;
+    ^ can be changed there or in an inline style where class is applied*/
+    border: none;
+    border-radius: 75px;
+    font-size: 20px;
 }
-
-/* Cell Styling */
-.cell {}
 
 /* Row Styling */
 .row {}

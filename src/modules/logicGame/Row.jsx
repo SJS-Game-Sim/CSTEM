@@ -5,11 +5,12 @@ import { Bubble } from './Bubble'
 //import { ItemTypes } from './itemTypes'
 import './styles.css'
 
-export const Row = (props) => {
+export const Row = props => {
     {
-        const { BUBBLES } = props
-
-        const [bubbles, setBubbles] = useState({ BUBBLES })
+        console.log("A Row object was created.")
+        console.log("bubbleList contains:")
+        console.log(props.bubblesList)
+        const [bubbles, setBubbles] = useState(props.bubblesList)
 
         const moveBubble = useCallback((dragIndex, hoverIndex) => {
             setBubbles((prevBubbles) => update(prevBubbles, {
@@ -21,8 +22,12 @@ export const Row = (props) => {
         }, [])
 
         const renderBubble = useCallback((bubble, index) => {
+            console.log("Rendering bubble:")
+            console.log("bubble: ", bubble)
+            console.log("index: ", index)
+
             return (
-                <Bubble key={bubble.id} index={index} text={bubble.text} moveBubble={moveBubble} />
+                <Bubble key={id} index={index} text={bubble} moveBubble={moveBubble} />
             )
         }, [])
 
@@ -41,8 +46,9 @@ export const Row = (props) => {
 	
         // Returns a variable amount of 'Cell' object to hold 'Bubbles'.
         // Requires a className for CSS shading.
-        return (<>
-            <div className={this.props.className}>{bubbles.map((bubble, id) => renderBubble(bubble, id))}</div>
+        return (
+        <>
+                <div className='row'>{bubbles.map((bubble, id) => renderBubble(bubble, id))}</div>
         </>
         )
     }

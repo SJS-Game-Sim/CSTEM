@@ -5,58 +5,17 @@
  * */
 
 import React, { useState } from 'react'
-import Board from './Board'
-
-const { logicData } = require('./Data').logicData
-
-const createBubbles = props => {
-    const bubbles = [props.answer]
-    while (bubbles.length <= props.amount) {
-        if (bubbles.length >= logicData.commands.length) break
-        const bubble = logicData.commands[Math.floor(Math.random() * bubbles.length)]
-        if (this.bubbles.indexOf(bubble) === -1) {
-            this.bubbles.push(bubble)
-        }
-    }
-    // Durstenfeld Shuffle courtesy of Laurens Holst, StackOverflow
-    for (let i = bubbles.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [bubbles[i], bubbles[j]] = [bubbles[j], bubbles[i]];
-    }
-    return bubbles
-}
-
-const createRows = props => {
-    // Create a number of rows based on number of entries in {answer}
-    const rows = []
-	const answer = { props }
-	const amount = { props }
-    for (let i = 0; i <= props.answer.length; i++) {
-        rows.push({
-            bubbles: createBubbles(amount, answer[i]),
-            id: i
-        })
-    }
-    return rows
-}
-
-const createBoard = props => {
-	const level = { props }
-    const curLevel = logicData.levels[level]
-	const amount = curLevel.amount
-	const answer = curLevel.answer
-    const rows = createRows(amount, answer)
-    return (
-        <>
-            <Board row={rows}/>
-        </>
-    )
-}
+import { Board } from './Board'
 
 export function LogicGame(props) {
 	// eslint-disable-next-line
     const [level, setLevel] = useState(0)
-    return createBoard(level)
+    console.log("Current level is " + level)
+    return (
+        <div>
+            <Board level={level} />
+        </div>
+    )
 }
 
 /*var body = "" +
