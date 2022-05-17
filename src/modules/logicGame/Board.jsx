@@ -14,8 +14,8 @@ export const Board = (level) => {
                 break
             }
             const bubble = logicData.commands[Math.floor(Math.random() * logicData.commands.length)]
-            console.log("Push " + bubble)
             if (bubbles.indexOf(bubble) === -1) {
+                console.log("Push " + bubble)
                 bubbles.push(bubble)
             }
             console.log(bubbles)

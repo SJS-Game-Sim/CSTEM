@@ -27,7 +27,7 @@ export const Row = props => {
             console.log("index: ", index)
 
             return (
-                <Bubble key={id} index={index} text={bubble} moveBubble={moveBubble} />
+                <Bubble key={bubble} index={index} text={bubble} moveBubble={moveBubble} />
             )
         }, [])
 

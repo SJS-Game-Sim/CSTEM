@@ -3,6 +3,16 @@ import { useDrag, useDrop } from 'react-dnd'
 import { ItemTypes } from './itemTypes'
 import './styles.css'
 
+const style = {
+    color: 222020,
+    /*^changes font color*/
+    padding: 15,
+    /*background-color: #ff8080;
+    ^ can be changed there or in an inline style where class is applied*/
+    radius: 75,
+    fontsize: 20,
+}
+
 export const Bubble = ({id, text, index, moveBubble}) => {
     const ref = useRef(null)
 
@@ -43,8 +53,8 @@ export const Bubble = ({id, text, index, moveBubble}) => {
     drag(drop(ref))
 
     return (
-        <div className="bubble" ref={ref} data-handler-id={handlerId}>
-            <h3>{text}</h3>
+        <div ref={ref} style={style} data-handler-id={handlerId}>
+            <h4>{text}</h4>
         </div>
     )
 }
