@@ -4,11 +4,9 @@
 /* Bubble Styling */
 .bubble {
     color: #222020;
-    /*^changes font color*/
     padding: 15px 30px;
     outline: none;
-    /*background-color: #ff8080;
-    ^ can be changed there or in an inline style where class is applied*/
+    /*background-color: #ff8080;*/
     border: none;
     border-radius: 75px;
     font-size: 20px;

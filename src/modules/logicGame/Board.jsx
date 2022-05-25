@@ -5,9 +5,9 @@ import logicData from './Data'
 export const Board = (level) => {
 
     function createBubbles(amount, answer) {
-        console.log("createBubbles was called.")
+        //console.log("createBubbles was called.")
         const bubbles = [answer]
-        console.log(bubbles)
+        //console.log(bubbles)
         while (bubbles.length <= amount) {
             if (bubbles.length >= logicData.commands.length) {
                 console.log("More answer possibilities are requested than availible commands.")

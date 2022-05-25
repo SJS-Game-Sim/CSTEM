@@ -4,11 +4,10 @@ import { ItemTypes } from './itemTypes'
 import './styles.css'
 
 const style = {
+    // font color
     color: 222020,
-    /*^changes font color*/
     padding: 15,
-    /*background-color: #ff8080;
-    ^ can be changed there or in an inline style where class is applied*/
+    //background-color: #ff8080,
     radius: 75,
     fontsize: 20,
 }
