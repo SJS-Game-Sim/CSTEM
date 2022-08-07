@@ -1,0 +1,30 @@
+/* 
+    Created by Andy Huynh
+    Just some simple default styling for pleasing buttons and menus
+    Should remove after properly nice CSS styling is applied    
+*/
+
+.selectLevel {
+
+}
+
+.selectGame {
+    border-radius: 0.6rem;
+    background-color: lightgreen;
+    /* margin-right: 0.5rem;
+    margin-left: 0.5rem; */
+    margin: auto;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    font-size: 60px;
+    display: flex;
+}
+.selectGame:focus {
+    background-color: firebrick;
+}
+.selectGame:hover {
+    background-color: goldenrod;
+}
